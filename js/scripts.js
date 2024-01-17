@@ -6,6 +6,12 @@
 
 let users = [];
 
+// Set min date of the start & end date to today
+if (window.location.pathname === '/landing-page.html') {
+    document.getElementById('startDate').min = new Date().toISOString().split('T')[0];
+    document.getElementById('endDate').min = new Date().toISOString().split('T')[0];
+}
+
 function registerUser() {
     var newUsername = document.getElementById("username").value;
     var newPassword = document.getElementById("password").value;
@@ -30,11 +36,11 @@ function authenticateLogin() {
     // Admin default account
     if (username === "admin" && password === "test@123")
     {
-        window.location.href = "faq.html";
+        window.location.href = "landing-page.html";
     }
     else if (checkUser(username, password))
     {
-        window.location.href = "faq.html";
+        window.location.href = "landing-page.html";
     }
     else
     {
@@ -53,4 +59,13 @@ function checkUser(username, password) {
         }
     }
     return false;
+}
+
+function createBooking(event) {
+    event.preventDefault();
+    window.location.href = "car-selection.html";
+}
+
+function selectCar() {
+    window.location.href = "faq.html";
 }

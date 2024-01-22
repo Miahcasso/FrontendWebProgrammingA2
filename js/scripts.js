@@ -67,5 +67,15 @@ function createBooking(event) {
 }
 
 function selectCar() {
-    window.location.href = "faq.html";
+    window.location.href = "tesla-page.html";
+}
+
+function updateCard(t,id){
+    var elem = document.getElementById(id)
+    if(t.value !== "") elem.innerText = t.value
+}
+
+function moveToSummary(event) {
+    event.preventDefault();
+    window.location.href = "summary.html";
 }

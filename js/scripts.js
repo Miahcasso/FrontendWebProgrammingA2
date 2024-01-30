@@ -23,6 +23,9 @@ function registerUser() {
 
     // To save users in session storage
     sessionStorage.setItem('users', JSON.stringify(users));
+    window.location.href = "login.html";
+
+    return false;
 }
 
 function authenticateLogin() {
@@ -78,4 +81,8 @@ function updateCard(t,id){
 function moveToSummary(event) {
     event.preventDefault();
     window.location.href = "summary.html";
+}
+
+function returnHome() {
+    window.location.href = "index.html";
 }
